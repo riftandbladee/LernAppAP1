@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "config": "./config.js"
+            }
+        }
+    </script>
+    <script type="module" src="app.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Language Quiz</h1>
+            <div class="score-container">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+        </header>
+        
+        <main id="quiz-container">
+            <div class="quiz-card">
+                <div id="question-container">
+                    <h2 id="question">Welcome to the quiz!</h2>
+                </div>
+                
+                <div id="answers-container">
+                    <!-- Answers will be added here by JavaScript -->
+                </div>
+                
+                <button id="check-button" class="check-button">Check Answer</button>
+            </div>
+        </main>
+        
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <div id="result-message"></div>
+                <div id="correct-answer"></div>
+                <button id="continue-button">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
