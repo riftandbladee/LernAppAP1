@@ -41,6 +41,16 @@ h1 {
     color: #4b4b4b;
 }
 
+.progress-container {
+    text-align: center;
+}
+
+#progress-text {
+    font-size: 1rem;
+    color: #4b4b4b;
+    margin-bottom: 5px;
+}
+
 .progress-bar {
     background-color: #e6e6e6;
     height: 10px;
@@ -60,6 +70,39 @@ h1 {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#username-input {
+    padding: 10px;
+    width: 80%;
+    margin: 20px 0;
+    border: 2px solid #e6e6e6;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+#theme-selection {
+    margin: 20px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+#theme-selection h3 {
+    font-size: 1.2rem;
+    color: #4b4b4b;
+    margin-bottom: 10px;
+}
+
+#theme-selection label {
+    font-size: 1.1rem;
+    color: #4b4b4b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#theme-selection input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 #question-container {
@@ -71,19 +114,22 @@ h1 {
     color: #4b4b4b;
 }
 
-#answers-container {
+#answers-container, #wrong-questions-list, #scoreboard-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
     margin-bottom: 30px;
 }
 
-.answer-option {
+.answer-option, .wrong-question-item, .scoreboard-item {
     padding: 15px;
     border: 2px solid #e6e6e6;
     border-radius: 12px;
-    cursor: pointer;
     font-size: 1.1rem;
+}
+
+.answer-option {
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
@@ -107,8 +153,21 @@ h1 {
     background-color: #ffd1d1;
 }
 
+.wrong-question-item {
+    background-color: #fff1f1;
+}
+
+.scoreboard-item {
+    background-color: #f0f8ff;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
 .check-button {
-    width: 100%;
     padding: 15px;
     background-color: #58cc02;
     color: white;
@@ -118,6 +177,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    min-width: 150px;
 }
 
 .check-button:hover {
@@ -127,6 +187,40 @@ h1 {
 .check-button:disabled {
     background-color: #a5a5a5;
     cursor: not-allowed;
+}
+
+.check-button.cancel {
+    background-color: #ff9500;
+}
+
+.check-button.cancel:hover {
+    background-color: #e08500;
+}
+
+.check-button.wrong {
+    background-color: #ff4b4b;
+    margin-top: 10px;
+}
+
+.check-button.wrong:hover {
+    background-color: #e03e3e;
+}
+
+.check-button.delete {
+    background-color: #ff4b4b;
+}
+
+.check-button.delete:hover {
+    background-color: #e03e3e;
+}
+
+.check-button.secondary {
+    background-color: #007bff;
+    margin-top: 10px;
+}
+
+.check-button.secondary:hover {
+    background-color: #0056b3;
 }
 
 .modal {
@@ -187,20 +281,8 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .app-container {
-        padding: 15px;
-    }
-    
-    .quiz-card {
-        padding: 20px;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    #question {
-        font-size: 1.3rem;
-    }
+    .app-container { padding: 15px; }
+    .quiz-card { padding: 20px; }
+    h1 { font-size: 2rem; }
+    #question { font-size: 1.3rem; }
 }
-

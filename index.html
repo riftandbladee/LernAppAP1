@@ -19,23 +19,55 @@
             <h1>AP1 Quiz</h1>
             <div class="score-container">
                 <div class="score">Punktzahl: <span id="score">0</span></div>
-                <div class="progress-bar">
-                    <div id="progress" class="progress"></div>
+                <div class="progress-container">
+                    <span id="progress-text">Frage 0 von 0</span>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
                 </div>
             </div>
         </header>
         
         <main id="quiz-container">
-            <div class="quiz-card">
+            <!-- Hauptmenü -->
+            <div id="main-menu" class="quiz-card">
+                <h2>Hauptmenü</h2>
+                <input type="text" id="username-input" placeholder="Dein Benutzername" />
+                <div id="theme-selection">
+                    <h3>Wähle deine Themen:</h3>
+                    <label><input type="checkbox" value="OSI-Modell" checked> OSI-Modell</label><br>
+                    <label><input type="checkbox" value="Protokolle" checked> Protokolle</label><br>
+                    <label><input type="checkbox" value="Geräte" checked> Geräte</label><br>
+                </div>
+                <button id="start-button" class="check-button">Quiz starten</button>
+                <button id="show-wrong-button" class="check-button wrong">Falsche Fragen anzeigen</button>
+                <button id="show-scoreboard-button" class="check-button secondary">Scoreboard anzeigen</button>
+            </div>
+            
+            <!-- Quiz-Bereich -->
+            <div id="quiz-screen" class="quiz-card" style="display: none;">
                 <div id="question-container">
                     <h2 id="question">Welcome to the quiz!</h2>
                 </div>
-                
-                <div id="answers-container">
-                    <!-- Answers will be added here by JavaScript -->
+                <div id="answers-container"></div>
+                <div class="button-container">
+                    <button id="back-to-menu-from-quiz" class="check-button cancel">Zum Hauptmenü</button>
+                    <button id="check-button" class="check-button">Antwort Überprüfen</button>
                 </div>
-                
-                <button id="check-button" class="check-button">Antwort Überprüfen</button>
+            </div>
+
+            <!-- Falsche Fragen anzeigen -->
+            <div id="wrong-questions-screen" class="quiz-card" style="display: none;">
+                <h2>Falsch beantwortete Fragen</h2>
+                <div id="wrong-questions-list"></div>
+                <button id="back-to-menu-from-wrong" class="check-button">Zum Hauptmenü</button>
+            </div>
+
+            <!-- Scoreboard -->
+            <div id="scoreboard-screen" class="quiz-card" style="display: none;">
+                <h2>Scoreboard</h2>
+                <div id="scoreboard-list"></div>
+                <button id="back-to-menu-from-scoreboard" class="check-button">Zum Hauptmenü</button>
             </div>
         </main>
         
